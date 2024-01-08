@@ -17,13 +17,13 @@ const NUM_TABLE_ROW = 10;
 const TableHeading = () => {
   return (
     <thead className="">
-      <tr className="bg-black-95 rounded-md text-sm">
+      <tr className=" rounded-md text-sm">
         {TABLE_HEADINGS.map((item, index) => {
           const isRightAligned = index >= TABLE_HEADINGS.length / 2;
           return (
             <td
               key={index}
-              className={`font-medium py-[10px] first:pl-3 pr-3 text-black-30 ${
+              className={`font-medium py-[10px] bg-black-95 first:rounded-l-md last:rounded-r-md first:pl-3 pr-3 text-black-30 ${
                 isRightAligned ? "text-right" : ""
               }`}>
               {item.label}
@@ -46,16 +46,16 @@ const TableHeading = () => {
 
 const TableRow = () => {
   return (
-    <tbody className="px-3">
+    <tbody className="">
       {new Array(NUM_TABLE_ROW).fill(null).map((_, index) => {
         return (
-          <tr key={index} className="text-sm border-b border-black-90 mx-3">
+          <tr key={index} className="text-sm">
             {TABLE_ROW_ITEMS.map((item, index) => {
               const isRightAligned = index >= TABLE_ROW_ITEMS.length / 2;
               return (
                 <td
                   key={index}
-                  className={` first:pl-3 pr-3 py-[14px]
+                  className={`border-b border-black-90 first:pl-3 pr-3 py-[14px]
             first:text-primary-blue first:font-medium text-black-12
              ${isRightAligned ? "text-right" : ""}
             `}>
