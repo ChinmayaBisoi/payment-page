@@ -10,7 +10,7 @@ const sidebarItems = [
   { label: "Delivery", icon: "delivery", link: "/" },
   { label: "Marketing", icon: "marketing", link: "/" },
   { label: "Analytics", icon: "analytics", link: "/" },
-  { label: "Payments", icon: "payments", link: "/" },
+  { label: "Payments", icon: "payments", link: "/", isActive: true },
   { label: "Tools", icon: "tools", link: "/" },
   { label: "Discounts", icon: "discounts", link: "/" },
   { label: "Audience", icon: "audience", link: "/" },
@@ -33,12 +33,14 @@ const Sidebar = () => {
       </div>
 
       <nav className="flex flex-col flex-grow gap-1 px-2">
-        {sidebarItems.map(({ label, link, icon }) => {
+        {sidebarItems.map(({ label, isActive, link, icon }) => {
           return (
             <Link
               key={label}
               href={link}
-              className="flex items-center gap-3 px-4 py-2 rounded-md  hover:bg-white/10 opacity-80 hover:opacity-100  text-sm font-medium">
+              className={`flex items-center gap-3 px-4 py-2 rounded-md ${
+                isActive ? "bg-white/10 opacity-100" : ""
+              } hover:bg-white/10 opacity-80 hover:opacity-100  text-sm font-medium`}>
               <Image
                 src={`/sidebar/${icon}.svg`}
                 width={20}
