@@ -26,22 +26,34 @@ const Button = ({ className = "", title = "", isNext = false }) => {
           isNext ? "-rotate-90" : "rotate-90"
         }  w-[18px] h-[18px]`}
       />
-      <span>{title}</span>
+      <span class="hidden md:inline-block">{title}</span>
+      <span class="md:hidden">{title.slice(0, 4)}</span>
     </button>
   );
 };
 
 const Pagination = () => {
   return (
-    <div className="flex items-center gap-6">
+    <div className="flex items-center md:gap-6 gap-2">
       <Button title="Previous" />
-      <div className="flex items-center gap-2">
-        {items.map((item) => {
+      <div className="flex items-center gap-2 md:justify-between">
+        {items.map((item, index) => {
           const isActive = item === "10";
+          const activeIndex = 2;
+          const len = items.length;
+
+          if (index === len - 2) {
+            item = "...";
+          }
+
           return (
             <button
               key={item}
               className={`w-7 h-7 rounded-md ${
+                index > activeIndex && index < len - 2
+                  ? "hidden md:inline-block"
+                  : ""
+              } ${
                 isActive
                   ? "bg-primary-blue text-white font-medium"
                   : "text-black-30 hover:bg-neutral-100"
