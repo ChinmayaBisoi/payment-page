@@ -1,6 +1,9 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
+import Topbar from "@/components/Topbar";
 
 export default function Home() {
-  return <main>Hi</main>;
+  return (
+    <main>
+      <Topbar />
+    </main>
+  );
 }
