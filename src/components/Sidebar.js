@@ -1,3 +1,4 @@
+import ChevronDown from "@/icons/ChevronDown";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -28,12 +29,7 @@ const Sidebar = () => {
             Visit store
           </Link>
         </div>
-        <Image
-          src="/common/chevron-down.svg"
-          height={20}
-          width={20}
-          className="bg-secondary-navbar"
-        />
+        <ChevronDown className="text-white" />
       </div>
 
       <nav className="flex flex-col flex-grow gap-1 px-2">
