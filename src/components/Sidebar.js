@@ -20,9 +20,9 @@ const sidebarItems = [
 
 const Sidebar = () => {
   return (
-    <aside className="w-56 bg-secondary-navbar text-white absolute top-0 left-0 h-screen flex flex-col">
+    <aside className="w-56 bg-secondary-navbar text-white absolute left-0 h-screen flex flex-col">
       <div className="flex items-center gap-3 p-4 pb-6">
-        <Image src="/stores/nishyon.svg" width={40} height={40} />
+        <Image src="/stores/nishyon.svg" width={40} height={40} alt="" />
         <div className="flex-grow">
           <p className="font-medium text-[15px] leading-[22px]">Nishyan</p>
           <Link href="/" className="underline opacity-80">
@@ -36,9 +36,15 @@ const Sidebar = () => {
         {sidebarItems.map(({ label, link, icon }) => {
           return (
             <Link
+              key={label}
               href={link}
               className="flex items-center gap-3 px-4 py-2 rounded-md  hover:bg-white/10 opacity-80 hover:opacity-100  text-sm font-medium">
-              <Image src={`/sidebar/${icon}.svg`} width={20} height={20} />
+              <Image
+                src={`/sidebar/${icon}.svg`}
+                width={20}
+                height={20}
+                alt=""
+              />
               {label}
             </Link>
           );
@@ -48,6 +54,7 @@ const Sidebar = () => {
         <Image
           src={`/sidebar/home.svg`}
           width={36}
+          alt=""
           height={36}
           className="rounded-md bg-white/10 p-[6px]"
         />
