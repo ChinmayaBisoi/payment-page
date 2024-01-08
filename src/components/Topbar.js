@@ -11,7 +11,7 @@ const Icon = ({ iconSrc }) => {
 
 const Topbar = () => {
   return (
-    <div className="px-8 py-3 flex items-center gap-3 justify-between">
+    <div className="px-8 py-3 flex items-center gap-3 justify-between border-b border-black-85">
       <div className="flex items-center gap-3 flex-1">
         <p className="text-black-12 text-[15px] leading-[22px]">Payments</p>
         <div className="flex items-center gap-[6px]">
