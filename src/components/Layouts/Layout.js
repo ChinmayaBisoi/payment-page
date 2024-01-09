@@ -8,7 +8,9 @@ const Layout = ({ children }) => {
   return (
     <div className={`relative flex min-h-screen ${inter.className}`}>
       <Sidebar />
-      <div className="pl-56 overflow-scroll h-screen flex-grow">{children}</div>
+      <div className="md:pl-56 overflow-scroll h-screen flex-grow">
+        {children}
+      </div>
     </div>
   );
 };

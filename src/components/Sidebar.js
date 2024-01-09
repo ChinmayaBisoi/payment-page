@@ -1,7 +1,8 @@
 import ChevronDown from "@/icons/ChevronDown";
+import Close from "@/icons/Close";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 
 const sidebarItems = [
   { label: "Home", icon: "home", link: "/" },
@@ -18,18 +19,38 @@ const sidebarItems = [
   { label: "Plugins", icon: "plugins", link: "/" },
 ];
 
-const Sidebar = () => {
+const Sidebar = ({ isMob = false, toggleMenu = () => {} }) => {
+  // useEffect(() => {
+  //   return () => {
+  //     if (isMob) {
+  //       toggleMenu();
+  //     }
+  //   };
+  // }, []);
+
   return (
-    <aside className="w-56 bg-secondary-navbar text-white absolute left-0 h-screen flex flex-col">
-      <div className="flex items-center gap-3 p-4 pb-6">
-        <Image src="/stores/nishyon.svg" width={40} height={40} alt="" />
-        <div className="flex-grow">
-          <p className="font-medium text-[15px] leading-[22px]">Nishyan</p>
-          <Link href="/" className="underline opacity-80">
-            Visit store
-          </Link>
+    <aside
+      className={`${
+        isMob
+          ? "w-full flex flex-col top-0 md:hidden fixed"
+          : "w-56 hidden md:flex md:flex-col absolute"
+      }  bg-secondary-navbar text-white z-10 h-screen left-0`}>
+      <div className="flex justify-between items-center pr-3">
+        <div className="flex grow items-center gap-3 p-4 pb-6">
+          <Image src="/stores/nishyon.svg" width={40} height={40} alt="" />
+          <div className="flex-grow">
+            <p className="font-medium text-[15px] leading-[22px]">Nishyan</p>
+            <Link href="/" className="underline opacity-80">
+              Visit store
+            </Link>
+          </div>
+          <ChevronDown className="text-white" />
         </div>
-        <ChevronDown className="text-white" />
+        {isMob && (
+          <button onClick={toggleMenu} className="mb-1">
+            <Close />
+          </button>
+        )}
       </div>
 
       <nav className="flex flex-col flex-grow gap-1 px-2">

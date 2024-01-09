@@ -12,7 +12,7 @@ const PaymentOverview = () => {
           <ChevronDown className="w-4 h-4 text-black-30" />
         </div>
       </div>
-      <div className="mt-6 flex gap-5">
+      <div className="mt-6 flex md:flex-row flex-col gap-5">
         <Card title="Online orders" subtitle="231" />
         <Card title="Amount Received" subtitle="₹23,92,312.19" />
       </div>

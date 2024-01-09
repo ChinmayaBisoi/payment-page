@@ -77,26 +77,26 @@ const Transactions = () => {
         Transactions | This Month
       </h3>
       <div className="bg-white rounded-lg p-3 pb-6">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between gap-1 items-center">
           <div className="relative">
-            <Search className="w-[14px] h-[14px] absolute left-4 top-[13px] text-black-60" />
+            <Search className="w-[14px] h-[14px] absolute sm:left-4 left-2 top-[13px] text-black-60" />
             <input
               placeholder="Search features, tutorials, etc."
-              className="w-[248px] rounded-md outline-none bg-black-95 pl-[38px] pr-4 py-[10px] h-10 text-sm placeholder:text-black-60 text-black-60"
+              className="w-[248px] rounded-md outline-none bg-black-95 sm:pl-[38px] pl-7 sm:pr-4 pr-2 py-[10px] h-10 text-sm placeholder:text-black-60 text-black-60"
             />
           </div>
-          <div className="flex items-center gap-3">
-            <div className="border border-black-85 rounded-md flex items-center gap-[6px] pl-3 py-[6px] pr-[10px]">
-              <p className="text-black-30 ">Sort</p>
+          <div className="flex items-center flex-shrink-0 md:gap-3 gap-1">
+            <div className="border border-black-85 rounded-md flex items-center gap-[6px] p-1 sm:p-2 md:pl-3 md:py-[6px] md:pr-[10px]">
+              <p className="text-black-30 hidden md:block">Sort</p>
               <Image
                 alt=""
                 src="/common/sort.svg"
                 width={16}
                 height={16}
-                className=""
+                className="w-5 h-5 md:w-3 md:h-3"
               />
             </div>
-            <div className="p-2 border border-black-85 rounded-md">
+            <div className="p-1 sm:p-2  border border-black-85 rounded-md">
               <Image alt="" src="/common/download.svg" width={20} height={20} />
             </div>
           </div>
